@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app = 'test'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-type=text/html;charset=utf-8"/>
+    <!-- jQuery -->
+    <script type="text/javascript" src="http://code.changer.hk/jquery/1.11.2/jquery.min.js"></script>
+     <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        .table{
+            width: 1000px;
+            text-align: center;
+        }
+    </style>
+    <title>学生信息管理</title>
+</head>
+
+<body ng-controller = 'main'>
+    <div class="">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <td>学号</td>
+                    <td>姓名</td>
+                    <td>班级</td>
+                    <td>学院</td>
+                    <td>电话</td>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+</body>
+<script type="text/javascript">
+
+$.ajax({
+    type: 'get',
+    url: '/cgi-bin/hello.sh',
+    data:{},
+    success: function (data) {
+        //console.log(data);
+        var a = data.split('|');
+        //console.log(a);
+        var trStr = '';//动态拼接table
+        for (var i = 0; i < a.length; i++) {
+            trStr += '<tr class="example">';
+            trStr += '<td width="15%">' + JSON.parse(a[i]).studentID + '</td>';
+            trStr += '<td width="15%">' + JSON.parse(a[i]).studentName + '</td>';
+            trStr += '<td width="15%">' + JSON.parse(a[i]).class + '</td>';
+            trStr += '<td>' + JSON.parse(a[i]).department + '</td>';
+            trStr += '<td>' + JSON.parse(a[i]).teleNumber + '</td>';
+            trStr += '</tr>';  
+        } 
+        $("#tbody").html(trStr);
+    }
+});
+</script>
+</html>

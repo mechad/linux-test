@@ -1,7 +1,6 @@
 #!/bin/bash
 # ********************************************************
 # @file: /var/www/cgi-bin/hello.sh
-# @author: Lin, Chao <chaochaox.lin@intel.com>
 # @create time: 2018-11-26 14:32:20
 # @last modified: 2018-11-26 14:32:20
 # @description:

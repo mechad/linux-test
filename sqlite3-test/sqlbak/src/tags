@@ -1,0 +1,36 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS	Makefile	/^CFLAGS=-Wall -g$/;"	m
+FOLLOW_OFF	fswalk.h	/^static int const FOLLOW_OFF = 0;$/;"	v
+FOLLOW_ON	fswalk.h	/^static int const FOLLOW_ON = 1;$/;"	v
+LOADLIBES	Makefile	/^LOADLIBES=-lsqlite3 -ltar$/;"	m
+LOG_OFF	log.h	/^static int const LOG_OFF = 0;$/;"	v
+LOG_ON	log.h	/^static int const LOG_ON = 1;$/;"	v
+backup	backup.c	/^int backup(const char* path)$/;"	f
+backup_dry_run	backup.c	/^int backup_dry_run(const char* path)$/;"	f
+backup_integrity_check	backup.c	/^int backup_integrity_check(const char* path)$/;"	f
+follow_lnk	fswalk.c	/^static int follow_lnk = 0;$/;"	v	file:
+format	fswalk.c	/^static const char* format = "SQLite format 3";$/;"	v	file:
+format_len	fswalk.c	/^static int format_len = 15;$/;"	v	file:
+get_blocking_pid	backup.c	/^int get_blocking_pid(const char* path)$/;"	f
+get_tarname	sqlbak.c	/^static char* get_tarname(const char *path)$/;"	f	file:
+lock_timeout	backup.c	/^static int lock_timeout = 2000;$/;"	v	file:
+logging	log.c	/^static int logging = 0;$/;"	v	file:
+logmsg	log.c	/^int logmsg(char *format, ...)$/;"	f
+long_opts	sqlbak.c	/^static struct option long_opts[] = {$/;"	v	typeref:struct:option	file:
+main	sqlbak.c	/^int main(int argc, char *argv[])$/;"	f
+set_follow_lnk	fswalk.c	/^int set_follow_lnk(int follow) $/;"	f
+set_lock_timeout	backup.c	/^int set_lock_timeout(int timeout)$/;"	f
+set_tar_path	backup.c	/^int set_tar_path(const char* path)$/;"	f
+set_tmp_path	backup.c	/^int set_tmp_path(const char* path)$/;"	f
+setlog	log.c	/^int setlog(int log_level)$/;"	f
+tar_path	backup.c	/^static const char* tar_path = NULL;$/;"	v	file:
+tmp_path	backup.c	/^static const char* tmp_path = NULL;$/;"	v	file:
+usage	sqlbak.c	/^static void usage()$/;"	f	file:
+version	sqlbak.c	/^const char *version = "1.0.0";$/;"	v
+walk_callback	fswalk.h	/^typedef int (*walk_callback)(const char* path);$/;"	t
+walk_dir	fswalk.c	/^int walk_dir(const char *directory, walk_callback cb)$/;"	f

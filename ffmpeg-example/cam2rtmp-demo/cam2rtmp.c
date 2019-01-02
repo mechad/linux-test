@@ -149,7 +149,7 @@ int decode(AVCodecContext *dec_ctx, AVFrame *frame, AVPacket *pkt, struct sEncod
 
     ret = avcodec_send_packet(dec_ctx, pkt);
     if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF) {
-
+        return 0;
     } else if(ret < 0){
         fprintf(stderr, "Error sending a packet for decoding: %s\n", av_err2str(ret));
         exit(1);
@@ -395,7 +395,7 @@ int main(int argc, char **argv)
         fprintf(stderr, "Usage: %s <input file> <output file>\n", argv[0]);
         exit(0);
     }
-    
+
     memset((uint8_t*)&sDecoder, 0, sizeof(sDecoder));
     memset((uint8_t*)&sEncoder, 0, sizeof(sEncoder));
 
@@ -433,7 +433,7 @@ int main(int argc, char **argv)
             decode(sDecoder.c, sDecoder.frame, sDecoder.pkt, &sEncoder);
         }
         av_packet_unref(sDecoder.pkt);
-        //av_usleep(1000000/25);  
+        av_usleep(1000000/25);  
 	}
 
     /* flush the decoder */
